@@ -131,10 +131,13 @@ h1 {
 
 /* --- Styles pour la page Mentions Légales --- */
 .legal-content {
+    /* AJOUT IMPORTANT : On annule le flexbox de l'accueil */
+    display: block; 
+    
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
-    flex: 1; /* Important pour que le footer ne remonte pas trop haut */
+    flex: 1; 
 }
 
 .back-link {
