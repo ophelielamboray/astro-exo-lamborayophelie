@@ -60,7 +60,7 @@ main {
 
 .deco-diamond {
   position: absolute;
-  bottom: -10px;
+  bottom: 20px;
   right: 9%; /* Ajuster selon le rendu */
   width: 90px;
   height: 90px;
@@ -121,12 +121,14 @@ main {
 }
 
 .profile-pic {
-  width: 330px;
-  height: 330px;
+  width: 350px;
+  height: 350px;
   object-fit: cover;
   border-radius: 50%;
   border: 8px solid var(--accent-blue); /* Le gros contour bleu */
   background-color: #ddd; /* Au cas où l'image ne charge pas */
+  position: relative;
+  z-index: 10;
 }
 
 
