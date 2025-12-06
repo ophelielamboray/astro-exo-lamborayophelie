@@ -163,18 +163,37 @@ h1 {
     margin-bottom: 1rem;
 }
 
+/* src/styles/home.css */
+
+/* ... tout ton code précédent ... */
+
 /* --- Footer --- */
 footer {
-  text-align: center;
-  padding: 1.5rem;
-  font-size: 0.8rem;
-  color: #666;
+  background-color: white; /* <-- C'EST ICI : La bande blanche */
   border-top: 1px solid #ddd;
+  padding: 1.5rem;
+  text-align: center;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: auto;
 }
 
 footer a {
   color: #666;
-  margin-left: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: var(--primary-red, #D80000);
 }
 
 /* --- Responsive Desktop --- */
@@ -187,5 +206,10 @@ footer a {
   
   .card-content {
     padding-right: 2rem;
+  }
+
+  footer {
+    flex-direction: row;
+    gap: 1.5rem;
   }
 }
