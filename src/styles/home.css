@@ -25,9 +25,7 @@ main {
   padding: 2rem;
 }
 
-/* =========================================
-   STYLE PAGE ACCUEIL (LA CARTE)
-   ========================================= */
+/* STYLE PAGE ACCUEIL (LA CARTE) */
 
 /* --- La Carte Rouge --- */
 .card {
@@ -131,14 +129,11 @@ main {
 }
 
 
-/* =========================================
-   STYLE PAGE MENTIONS LÉGALES (Modèle Figma)
-   ========================================= */
+/* STYLE PAGE MENTIONS LÉGALES */
 
 .legal-content {
     /* Important pour ne pas être en flexbox centré comme l'accueil */
     display: block; 
-    
     max-width: 800px;
     margin: 0 auto;
     padding: 4rem 2rem;
@@ -151,7 +146,7 @@ main {
     display: inline-block;
     margin-bottom: 1rem;
     text-decoration: none;
-    color: #666; /* Gris foncé */
+    color: #607D8B; /* Gris foncé */
     font-size: 0.9rem;
 }
 
@@ -187,31 +182,26 @@ main {
 }
 
 
-/* =========================================
-   STYLE DU FOOTER (Bande blanche)
-   ========================================= */
+/* STYLE DU FOOTER (Bande blanche) */
 
 footer {
   background-color: white; /* La bande blanche */
   border-top: 1px solid #ddd;
   padding: 1.5rem;
   text-align: center;
-  
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  
   font-size: 0.85rem;
-  color: #666;
+  color: #607D8B;
   margin-top: auto;
 }
 
 footer a {
-  color: #666;
-  text-decoration: none;
-  font-weight: bold;
+  color: #607D8B;
+  text-decoration: underline;
 }
 
 footer a:hover {
@@ -220,9 +210,7 @@ footer a:hover {
 }
 
 
-/* =========================================
-   RESPONSIVE (VERSION BUREAU)
-   ========================================= */
+/* RESPONSIVE (VERSION BUREAU) */
 
 @media (min-width: 768px) {
   /* Mise en page de la carte : texte à gauche, image à droite */
