@@ -127,6 +127,39 @@ h1 {
   background-color: #ddd; /* Au cas où l'image ne charge pas */
 }
 
+/* ... Tout ton CSS précédent (card, etc) ... */
+
+/* --- Styles pour la page Mentions Légales --- */
+.legal-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    flex: 1; /* Important pour que le footer ne remonte pas trop haut */
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    color: var(--accent-blue, blue); /* Utilise ton bleu perso ou bleu par défaut */
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* On peut ajouter un peu de style pour le texte des mentions */
+.legal-content section {
+    margin-bottom: 2rem;
+}
+
+.legal-content h2 {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
 /* --- Footer --- */
 footer {
   text-align: center;
