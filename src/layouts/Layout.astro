@@ -1,22 +1,69 @@
+---
+// src/layouts/Layout.astro
+
+// On récupère le titre passé en paramètre par les pages
+const { title } = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="description" content="Portfolio de John Doe" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title}</title>
 	</head>
 	<body>
+		
 		<slot />
+
+		<footer>
+			<p>&copy; 2025 John Doe. Tous droits réservés.</p>
+			<a href="/mentions-legales">Mentions légales</a>
+		</footer>
+
 	</body>
 </html>
 
-<style>
-	html,
+<style is:global>
+	/* Styles globaux de base */
+	:root {
+		--bg-color: #F5F5F5;
+		--text-color: #333;
+	}
+	
+	html {
+		font-family: system-ui, sans-serif;
+		background: var(--bg-color);
+		color: var(--text-color);
+	}
+
 	body {
 		margin: 0;
-		width: 100%;
-		height: 100%;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+
+	/* Style du Footer */
+	footer {
+		text-align: center;
+		padding: 2rem;
+		font-size: 0.8rem;
+		border-top: 1px solid #ddd;
+		margin-top: auto; /* Pousse le footer tout en bas si la page est vide */
+	}
+
+	footer a {
+		color: #666;
+		margin-left: 10px;
+		text-decoration: none;
+	}
+
+	footer a:hover {
+		text-decoration: underline;
 	}
 </style>
