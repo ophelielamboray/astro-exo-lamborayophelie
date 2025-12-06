@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Mentions Légales">
+    <main class="legal-content">
+        <a href="/" class="back-link">← Retour à l'accueil</a>
+        
+        <h1>Mentions Légales</h1>
+        
+        <section>
+            <h2>Éditeur</h2>
+            <p>Nom Prénom, Adresse...</p>
+            </section>
+    </main>
+</Layout>
+
+<style>
+    .legal-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+    .back-link {
+        display: inline-block;
+        margin-bottom: 2rem;
+        text-decoration: none;
+        color: blue; /* Couleur composant Figma */
+    }
+    .back-link:hover {
+        text-decoration: underline;
+    }
+</style>
