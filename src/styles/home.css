@@ -25,6 +25,10 @@ main {
   padding: 2rem;
 }
 
+/* =========================================
+   STYLE PAGE ACCUEIL (LA CARTE)
+   ========================================= */
+
 /* --- La Carte Rouge --- */
 .card {
   background-color: var(--primary-red);
@@ -62,7 +66,6 @@ main {
   right: 15%; /* Ajuster selon le rendu */
   width: 80px;
   height: 80px;
-  background-color: #2B8FFF; /* Un bleu un peu plus clair sur la maquette ? ou le même */
   background-color: var(--accent-blue);
   transform: rotate(45deg); /* Rotation pour faire un losange */
   z-index: 1;
@@ -74,7 +77,7 @@ main {
   flex: 1;
 }
 
-h1 {
+.card-content h1 {
   font-size: 3rem;
   margin: 0 0 0.5rem 0;
   font-weight: bold;
@@ -127,49 +130,69 @@ h1 {
   background-color: #ddd; /* Au cas où l'image ne charge pas */
 }
 
-/* ... Tout ton CSS précédent (card, etc) ... */
 
-/* --- Styles pour la page Mentions Légales --- */
+/* =========================================
+   STYLE PAGE MENTIONS LÉGALES (Modèle Figma)
+   ========================================= */
+
 .legal-content {
-    /* AJOUT IMPORTANT : On annule le flexbox de l'accueil */
+    /* Important pour ne pas être en flexbox centré comme l'accueil */
     display: block; 
     
     max-width: 800px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 4rem 2rem;
     flex: 1; 
+    background-color: transparent;
 }
 
+/* Le lien retour discret */
 .back-link {
     display: inline-block;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     text-decoration: none;
-    color: var(--accent-blue, blue); /* Utilise ton bleu perso ou bleu par défaut */
-    font-weight: bold;
+    color: #666; /* Gris foncé */
+    font-size: 0.9rem;
 }
 
 .back-link:hover {
     text-decoration: underline;
+    color: var(--primary-red);
 }
 
-/* On peut ajouter un peu de style pour le texte des mentions */
-.legal-content section {
+/* LE TITRE BLEU (Spécifique page mentions) */
+.legal-content h1 {
+    font-size: 4rem; /* Très grand */
+    color: var(--accent-blue); /* Le bleu de la charte */
     margin-bottom: 2rem;
+    line-height: 1.1;
 }
 
+/* Les sous-titres */
 .legal-content h2 {
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 0.5rem;
+    font-size: 2rem;
+    color: #000;
+    margin-top: 3rem;
     margin-bottom: 1rem;
+    border: none;
 }
 
-/* src/styles/home.css */
+/* Les paragraphes */
+.legal-content p {
+    line-height: 1.6;
+    color: #444;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
 
-/* ... tout ton code précédent ... */
 
-/* --- Footer --- */
+/* =========================================
+   STYLE DU FOOTER (Bande blanche)
+   ========================================= */
+
 footer {
-  background-color: white; /* <-- C'EST ICI : La bande blanche */
+  background-color: white; /* La bande blanche */
   border-top: 1px solid #ddd;
   padding: 1.5rem;
   text-align: center;
@@ -193,13 +216,18 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
-  color: var(--primary-red, #D80000);
+  color: var(--primary-red);
 }
 
-/* --- Responsive Desktop --- */
+
+/* =========================================
+   RESPONSIVE (VERSION BUREAU)
+   ========================================= */
+
 @media (min-width: 768px) {
+  /* Mise en page de la carte : texte à gauche, image à droite */
   .card {
-    flex-direction: row; /* On passe le texte à gauche, l'image à droite */
+    flex-direction: row; 
     text-align: left;
     padding: 4rem;
   }
@@ -208,6 +236,7 @@ footer a:hover {
     padding-right: 2rem;
   }
 
+  /* Footer en ligne sur grand écran */
   footer {
     flex-direction: row;
     gap: 1.5rem;
