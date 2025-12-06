@@ -1,0 +1,155 @@
+/* src/styles/home.css */
+
+:root {
+  --primary-red: #D80000; /* Rouge vif de la maquette */
+  --accent-blue: #2B4EFF; /* Bleu des formes et contour */
+  --text-white: #ffffff;
+  --bg-page: #F5F5F5;
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif; /* Ou une Google Font si vous avez choisi */
+  background-color: var(--bg-page);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* --- Container Principal --- */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* --- La Carte Rouge --- */
+.card {
+  background-color: var(--primary-red);
+  color: var(--text-white);
+  width: 100%;
+  max-width: 900px;
+  border-radius: 20px;
+  position: relative; /* Pour positionner les éléments décoratifs */
+  overflow: hidden; /* Pour couper les formes qui dépassent */
+  padding: 3rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  
+  /* Flexbox pour mettre texte à gauche et image à droite */
+  display: flex;
+  flex-direction: column-reverse; /* Mobile d'abord : image en haut ou texte en bas */
+  gap: 2rem;
+  align-items: center;
+}
+
+/* --- Éléments Décoratifs (Absolus par rapport à la carte) --- */
+.deco-circle {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: var(--accent-blue);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.deco-diamond {
+  position: absolute;
+  bottom: -30px;
+  right: 15%; /* Ajuster selon le rendu */
+  width: 80px;
+  height: 80px;
+  background-color: #2B8FFF; /* Un bleu un peu plus clair sur la maquette ? ou le même */
+  background-color: var(--accent-blue);
+  transform: rotate(45deg); /* Rotation pour faire un losange */
+  z-index: 1;
+}
+
+/* --- Contenu Texte --- */
+.card-content {
+  z-index: 2; /* Pour être au-dessus des formes */
+  flex: 1;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: bold;
+}
+
+.baseline {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+.description {
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 400px;
+}
+
+/* --- Contacts --- */
+.contact-info {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.contact-info a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* --- Photo de profil --- */
+.image-container {
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.profile-pic {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 8px solid var(--accent-blue); /* Le gros contour bleu */
+  background-color: #ddd; /* Au cas où l'image ne charge pas */
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.8rem;
+  color: #666;
+  border-top: 1px solid #ddd;
+}
+
+footer a {
+  color: #666;
+  margin-left: 10px;
+}
+
+/* --- Responsive Desktop --- */
+@media (min-width: 768px) {
+  .card {
+    flex-direction: row; /* On passe le texte à gauche, l'image à droite */
+    text-align: left;
+    padding: 4rem;
+  }
+  
+  .card-content {
+    padding-right: 2rem;
+  }
+}
