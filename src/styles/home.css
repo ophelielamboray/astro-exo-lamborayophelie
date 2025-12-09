@@ -1,20 +1,14 @@
-/* src/styles/home.css */
 
-/* --- Variables Globales --- */
 :root {
-  /* Couleurs de la charte */
   --primary-red: #D80000;
   --accent-blue: #2B4EFF;
   --text-white: #ffffff;
-  
-  /* Couleurs de fond et texte (importées du Layout) */
   --bg-page: #F5F5F5;
   --text-color: #333;
 }
 
-/* --- Base du site (Importé du Layout) --- */
 html {
-  font-family: system-ui, sans-serif; /* Police de secours */
+  font-family: system-ui, sans-serif; 
   background: var(--bg-page);
   color: var(--text-color);
 }
@@ -22,16 +16,13 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif; /* Police principale */
+  font-family: 'Arial', sans-serif; 
   background-color: var(--bg-page);
-  
-  /* Gestion du Layout pour le Footer */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* --- Container Principal --- */
 main {
   flex: 1;
   display: flex;
@@ -58,7 +49,7 @@ main {
   align-items: center;
 }
 
-/* Éléments Décoratifs */
+
 .deco-circle {
   position: absolute;
   top: 30px;
@@ -126,11 +117,13 @@ main {
   text-decoration: underline;
 }
 
+
 /* Photo de profil */
 .image-container {
   z-index: 2;
   flex-shrink: 0;
   /* position: relative;  <-- Ajoute ceci si tu veux que le losange se place par rapport à l'image et non la carte */
+  
 }
 
 .profile-pic {
@@ -144,6 +137,7 @@ main {
   /* Fix pour que l'image soit devant le losange */
   position: relative;
   z-index: 10;
+  transform: rotate(-19deg);
 }
 
 
