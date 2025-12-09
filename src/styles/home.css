@@ -31,7 +31,7 @@ main {
   padding: 2rem;
 }
 
-/* --- STYLE PAGE ACCUEIL (LA CARTE) --- */
+/* Page accueil */
 
 .card {
   background-color: var(--primary-red);
@@ -72,7 +72,6 @@ main {
   z-index: 1;
 }
 
-/* Contenu Texte */
 .card-content {
   z-index: 2;
   flex: 1;
@@ -97,7 +96,6 @@ main {
   max-width: 400px;
 }
 
-/* Contacts */
 .contact-info {
   display: flex;
   gap: 1.5rem;
@@ -117,12 +115,9 @@ main {
   text-decoration: underline;
 }
 
-
-/* Photo de profil */
 .image-container {
   z-index: 2;
   flex-shrink: 0;
-  /* position: relative;  <-- Ajoute ceci si tu veux que le losange se place par rapport à l'image et non la carte */
   
 }
 
@@ -133,15 +128,12 @@ main {
   border-radius: 50%;
   border: 8px solid var(--accent-blue);
   background-color: #ddd;
-  
-  /* Fix pour que l'image soit devant le losange */
   position: relative;
   z-index: 10;
   transform: rotate(-19deg);
 }
 
-
-/* --- STYLE PAGE MENTIONS LÉGALES --- */
+/* Page mentions légales */
 
 .legal-content {
     display: block; 
@@ -189,7 +181,7 @@ main {
 }
 
 
-/* --- STYLE DU FOOTER --- */
+/* Footer */
 
 footer {
   background-color: white;
@@ -215,9 +207,6 @@ footer a:hover {
   text-decoration: underline;
   color: var(--primary-red);
 }
-
-
-/* --- RESPONSIVE --- */
 
 @media (min-width: 768px) {
   .card {
