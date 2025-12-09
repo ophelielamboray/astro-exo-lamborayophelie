@@ -118,7 +118,6 @@ main {
 .image-container {
   z-index: 2;
   flex-shrink: 0;
-  
 }
 
 .profile-pic {
@@ -131,6 +130,7 @@ main {
   position: relative;
   z-index: 10;
   transform: rotate(-19deg);
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 /* Page mentions légales */
@@ -179,7 +179,6 @@ main {
     margin-bottom: 1.5rem;
     text-align: justify;
 }
-
 
 /* Footer */
 
