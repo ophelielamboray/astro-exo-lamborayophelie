@@ -1,16 +1,31 @@
 /* src/styles/home.css */
 
+/* --- Variables Globales --- */
 :root {
-  --primary-red: #D80000; /* Rouge vif de la maquette */
-  --accent-blue: #2B4EFF; /* Bleu des formes et contour */
+  /* Couleurs de la charte */
+  --primary-red: #D80000;
+  --accent-blue: #2B4EFF;
   --text-white: #ffffff;
+  
+  /* Couleurs de fond et texte (importées du Layout) */
   --bg-page: #F5F5F5;
+  --text-color: #333;
+}
+
+/* --- Base du site (Importé du Layout) --- */
+html {
+  font-family: system-ui, sans-serif; /* Police de secours */
+  background: var(--bg-page);
+  color: var(--text-color);
 }
 
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif; /* Ou une Google Font si vous avez choisi */
+  padding: 0;
+  font-family: 'Arial', sans-serif; /* Police principale */
   background-color: var(--bg-page);
+  
+  /* Gestion du Layout pour le Footer */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -25,28 +40,25 @@ main {
   padding: 2rem;
 }
 
-/* STYLE PAGE ACCUEIL (LA CARTE) */
+/* --- STYLE PAGE ACCUEIL (LA CARTE) --- */
 
-/* --- La Carte Rouge --- */
 .card {
   background-color: var(--primary-red);
   color: var(--text-white);
   width: 100%;
   max-width: 900px;
   border-radius: 20px;
-  position: relative; /* Pour positionner les éléments décoratifs */
-  overflow: hidden; /* Pour couper les formes qui dépassent */
+  position: relative;
+  overflow: hidden;
   padding: 3rem;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  
-  /* Flexbox pour mettre texte à gauche et image à droite */
   display: flex;
-  flex-direction: column-reverse; /* Mobile d'abord : image en haut ou texte en bas */
+  flex-direction: column-reverse;
   gap: 2rem;
   align-items: center;
 }
 
-/* --- Éléments Décoratifs (Absolus par rapport à la carte) --- */
+/* Éléments Décoratifs */
 .deco-circle {
   position: absolute;
   top: 30px;
@@ -61,17 +73,17 @@ main {
 .deco-diamond {
   position: absolute;
   bottom: 20px;
-  right: 9%; /* Ajuster selon le rendu */
+  right: 9%;
   width: 90px;
   height: 90px;
   background-color: var(--accent-blue);
-  transform: rotate(45deg); /* Rotation pour faire un losange */
+  transform: rotate(45deg);
   z-index: 1;
 }
 
-/* --- Contenu Texte --- */
+/* Contenu Texte */
 .card-content {
-  z-index: 2; /* Pour être au-dessus des formes */
+  z-index: 2;
   flex: 1;
   padding-top: 60px;
 }
@@ -94,7 +106,7 @@ main {
   max-width: 400px;
 }
 
-/* --- Contacts --- */
+/* Contacts */
 .contact-info {
   display: flex;
   gap: 1.5rem;
@@ -114,10 +126,11 @@ main {
   text-decoration: underline;
 }
 
-/* --- Photo de profil --- */
+/* Photo de profil */
 .image-container {
   z-index: 2;
   flex-shrink: 0;
+  /* position: relative;  <-- Ajoute ceci si tu veux que le losange se place par rapport à l'image et non la carte */
 }
 
 .profile-pic {
@@ -125,17 +138,18 @@ main {
   height: 350px;
   object-fit: cover;
   border-radius: 50%;
-  border: 8px solid var(--accent-blue); /* Le gros contour bleu */
-  background-color: #ddd; /* Au cas où l'image ne charge pas */
+  border: 8px solid var(--accent-blue);
+  background-color: #ddd;
+  
+  /* Fix pour que l'image soit devant le losange */
   position: relative;
   z-index: 10;
 }
 
 
-/* STYLE PAGE MENTIONS LÉGALES */
+/* --- STYLE PAGE MENTIONS LÉGALES --- */
 
 .legal-content {
-    /* Important pour ne pas être en flexbox centré comme l'accueil */
     display: block; 
     max-width: 800px;
     margin: 0 auto;
@@ -144,12 +158,11 @@ main {
     background-color: transparent;
 }
 
-/* Le lien retour discret */
 .back-link {
     display: inline-block;
     margin-bottom: 1rem;
     text-decoration: none;
-    color: #607D8B; /* Gris foncé */
+    color: #607D8B;
     font-size: 0.9rem;
 }
 
@@ -158,15 +171,13 @@ main {
     color: var(--primary-red);
 }
 
-/* LE TITRE BLEU (Spécifique page mentions) */
 .legal-content h1 {
-    font-size: 4rem; /* Très grand */
-    color: var(--accent-blue); /* Le bleu de la charte */
+    font-size: 4rem;
+    color: var(--accent-blue);
     margin-bottom: 2rem;
     line-height: 1.1;
 }
 
-/* Les sous-titres */
 .legal-content h2 {
     font-size: 2rem;
     color: #000;
@@ -175,7 +186,6 @@ main {
     border: none;
 }
 
-/* Les paragraphes */
 .legal-content p {
     line-height: 1.6;
     color: #444;
@@ -185,10 +195,10 @@ main {
 }
 
 
-/* STYLE DU FOOTER (Bande blanche) */
+/* --- STYLE DU FOOTER --- */
 
 footer {
-  background-color: white; /* La bande blanche */
+  background-color: white;
   border-top: 1px solid #ddd;
   padding: 1.5rem;
   text-align: center;
@@ -213,10 +223,9 @@ footer a:hover {
 }
 
 
-/* RESPONSIVE (VERSION BUREAU) */
+/* --- RESPONSIVE --- */
 
 @media (min-width: 768px) {
-  /* Mise en page de la carte : texte à gauche, image à droite */
   .card {
     flex-direction: row; 
     text-align: left;
@@ -227,7 +236,6 @@ footer a:hover {
     padding-right: 2rem;
   }
 
-  /* Footer en ligne sur grand écran */
   footer {
     flex-direction: row;
     gap: 1.5rem;
