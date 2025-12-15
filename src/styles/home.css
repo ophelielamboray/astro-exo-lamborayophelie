@@ -28,10 +28,10 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem; /* Réduit à 1rem sur mobile pour gagner de la place */
+  padding: 1rem;
 }
 
-/* --- Page accueil --- */
+/* Page accueil */
 
 .card {
   background-color: var(--primary-red);
@@ -41,10 +41,7 @@ main {
   border-radius: 20px;
   position: relative;
   overflow: hidden;
-  
-  /* MOBILE : Padding réduit (32px) pour que tout rentre */
   padding: 2rem; 
-  
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column-reverse;
@@ -56,34 +53,33 @@ main {
   position: absolute;
   top: 30px;
   left: 40px;
-  width: 60px; /* Un peu plus petit sur mobile */
+  width: 60px; 
   height: 60px;
   background-color: var(--accent-blue);
   border-radius: 50%;
   z-index: 1;
 }
 
-/* Le losange se positionne par rapport à l'image container si le HTML est bon */
 .deco-diamond {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 70px; /* Taille ajustée pour mobile */
+  width: 70px; 
   height: 70px;
   background-color: var(--accent-blue);
-  transform: rotate(45deg) translate(20%, 20%); /* Ajustement pour le coin */
+  transform: rotate(45deg) translate(20%, 20%); 
   z-index: 1;
 }
 
 .card-content {
   z-index: 2;
   flex: 1;
-  padding-top: 20px; /* Moins d'espace en haut sur mobile */
-  width: 100%; /* S'assure que le texte prend la largeur */
+  padding-top: 20px; 
+  width: 100%; 
 }
 
 .card-content h1 {
-  font-size: 2.2rem; /* Titre plus petit sur mobile */
+  font-size: 2.2rem;
   margin: 0 0 0.5rem 0;
   font-weight: bold;
 }
@@ -119,14 +115,13 @@ main {
   text-decoration: underline;
 }
 
-/* --- Gestion de l'Image Responsive --- */
+/* Gestion de l'Image Responsive */
 
 .image-container {
-  /* MOBILE : Taille réduite pour tenir sur un écran de téléphone */
   width: 260px;
   height: 260px;
   
-  position: relative; /* Important pour placer le losange */
+  position: relative;
   z-index: 2;
   flex-shrink: 0;
   display: flex;
@@ -135,13 +130,12 @@ main {
 }
 
 .profile-pic {
-  /* L'image s'adapte à 100% de son container (donc 260px sur mobile) */
   width: 100%;
   height: 100%;
   
   object-fit: cover;
   border-radius: 50%;
-  border: 6px solid var(--accent-blue); /* Bordure un peu plus fine sur mobile */
+  border: 6px solid var(--accent-blue);
   background-color: #ddd;
   position: relative;
   z-index: 10;
@@ -149,13 +143,13 @@ main {
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* --- Page mentions légales --- */
+/* Page mentions légales */
 
 .legal-content {
     display: block; 
     max-width: 800px;
     margin: 0 auto;
-    padding: 2rem 1.5rem; /* Marges réduites sur mobile */
+    padding: 2rem 1.5rem; 
     flex: 1; 
     background-color: transparent;
 }
@@ -174,7 +168,7 @@ main {
 }
 
 .legal-content h1 {
-    font-size: 2.5rem; /* Plus petit sur mobile */
+    font-size: 2.5rem;
     color: var(--accent-blue);
     margin-bottom: 2rem;
     line-height: 1.1;
@@ -224,15 +218,12 @@ footer a:hover {
 }
 
 
-/* --- VERSION ORDINATEUR (Tablette et +) --- */
-
 @media (min-width: 768px) {
   
   main {
     padding: 2rem;
   }
 
-  /* On remet les grandes marges */
   .card {
     flex-direction: row; 
     text-align: left;
@@ -245,7 +236,7 @@ footer a:hover {
   }
   
   .card-content h1 {
-    font-size: 3rem; /* On remet le grand titre */
+    font-size: 3rem; 
   }
 
   .deco-circle {
@@ -258,7 +249,6 @@ footer a:hover {
     height: 90px;
   }
 
-  /* On remet la grande image */
   .image-container {
     width: 350px;
     height: 350px;
