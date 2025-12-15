@@ -28,10 +28,10 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 1rem; /* Réduit à 1rem sur mobile pour gagner de la place */
 }
 
-/* Page accueil */
+/* --- Page accueil --- */
 
 .card {
   background-color: var(--primary-red);
@@ -41,7 +41,10 @@ main {
   border-radius: 20px;
   position: relative;
   overflow: hidden;
-  padding: 3rem;
+  
+  /* MOBILE : Padding réduit (32px) pour que tout rentre */
+  padding: 2rem; 
+  
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column-reverse;
@@ -49,43 +52,44 @@ main {
   align-items: center;
 }
 
-
 .deco-circle {
   position: absolute;
   top: 30px;
   left: 40px;
-  width: 80px;
-  height: 80px;
+  width: 60px; /* Un peu plus petit sur mobile */
+  height: 60px;
   background-color: var(--accent-blue);
   border-radius: 50%;
   z-index: 1;
 }
 
+/* Le losange se positionne par rapport à l'image container si le HTML est bon */
 .deco-diamond {
   position: absolute;
-  bottom: 20px;
-  right: 9%;
-  width: 90px;
-  height: 90px;
+  bottom: 0;
+  right: 0;
+  width: 70px; /* Taille ajustée pour mobile */
+  height: 70px;
   background-color: var(--accent-blue);
-  transform: rotate(45deg);
+  transform: rotate(45deg) translate(20%, 20%); /* Ajustement pour le coin */
   z-index: 1;
 }
 
 .card-content {
   z-index: 2;
   flex: 1;
-  padding-top: 60px;
+  padding-top: 20px; /* Moins d'espace en haut sur mobile */
+  width: 100%; /* S'assure que le texte prend la largeur */
 }
 
 .card-content h1 {
-  font-size: 3rem;
+  font-size: 2.2rem; /* Titre plus petit sur mobile */
   margin: 0 0 0.5rem 0;
   font-weight: bold;
 }
 
 .baseline {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 1.5rem;
   font-weight: 300;
 }
@@ -93,12 +97,12 @@ main {
 .description {
   line-height: 1.6;
   margin-bottom: 2rem;
-  max-width: 400px;
+  max-width: 100%;
 }
 
 .contact-info {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
@@ -115,31 +119,43 @@ main {
   text-decoration: underline;
 }
 
+/* --- Gestion de l'Image Responsive --- */
+
 .image-container {
+  /* MOBILE : Taille réduite pour tenir sur un écran de téléphone */
+  width: 260px;
+  height: 260px;
+  
+  position: relative; /* Important pour placer le losange */
   z-index: 2;
   flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile-pic {
-  width: 350px;
-  height: 350px;
+  /* L'image s'adapte à 100% de son container (donc 260px sur mobile) */
+  width: 100%;
+  height: 100%;
+  
   object-fit: cover;
   border-radius: 50%;
-  border: 8px solid var(--accent-blue);
+  border: 6px solid var(--accent-blue); /* Bordure un peu plus fine sur mobile */
   background-color: #ddd;
   position: relative;
   z-index: 10;
   transform: rotate(-19deg);
-  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Page mentions légales */
+/* --- Page mentions légales --- */
 
 .legal-content {
     display: block; 
     max-width: 800px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: 2rem 1.5rem; /* Marges réduites sur mobile */
     flex: 1; 
     background-color: transparent;
 }
@@ -158,14 +174,14 @@ main {
 }
 
 .legal-content h1 {
-    font-size: 4rem;
+    font-size: 2.5rem; /* Plus petit sur mobile */
     color: var(--accent-blue);
     margin-bottom: 2rem;
     line-height: 1.1;
 }
 
 .legal-content h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #000;
     margin-top: 3rem;
     margin-bottom: 1rem;
@@ -207,15 +223,58 @@ footer a:hover {
   color: var(--primary-red);
 }
 
+
+/* --- VERSION ORDINATEUR (Tablette et +) --- */
+
 @media (min-width: 768px) {
+  
+  main {
+    padding: 2rem;
+  }
+
+  /* On remet les grandes marges */
   .card {
     flex-direction: row; 
     text-align: left;
-    padding: 4rem;
+    padding: 4rem; 
   }
   
   .card-content {
     padding-right: 2rem;
+    padding-top: 60px;
+  }
+  
+  .card-content h1 {
+    font-size: 3rem; /* On remet le grand titre */
+  }
+
+  .deco-circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .deco-diamond {
+    width: 90px;
+    height: 90px;
+  }
+
+  /* On remet la grande image */
+  .image-container {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .profile-pic {
+    border: 8px solid var(--accent-blue);
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  .legal-content {
+    padding: 4rem 2rem;
+  }
+  
+  .legal-content h1 {
+    font-size: 4rem;
   }
 
   footer {
